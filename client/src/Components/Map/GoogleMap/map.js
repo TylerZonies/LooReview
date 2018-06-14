@@ -15,6 +15,20 @@ export class MapContainer extends Component {
     }
 
     render() {
+
+        const points = [
+            { lat: 42.02, lng: -77.01 },
+            { lat: 42.03, lng: -77.02 },
+            { lat: 41.03, lng: -77.04 },
+            { lat: 42.05, lng: -77.02 }
+        ]
+    
+        let bounds = new this.props.google.maps.LatLngBounds();
+    
+        for (let i = 0; i < points.length; i++) {
+          bounds.extend(points[i]);
+        }
+
         return (
             <Map 
                 google={this.props.google} 
@@ -22,7 +36,8 @@ export class MapContainer extends Component {
                 initialCenter={{
                     lat: 39.7392,
                     lng: -104.9903
-                }}>
+                }}
+                bounds={bounds}>
                 
                 <Marker onClick={this.onMarkerClick}
                     name={'Current location'} />
