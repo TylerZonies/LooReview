@@ -1,7 +1,10 @@
 var mongoose = require('mongoose');
 
 var ReviewSchema = new mongoose.Schema({
-    comment: String,
+    comment: {
+        type: String,
+        default: ''
+    },
     isAccessable: {
         type: Boolean,
         default: false
@@ -18,17 +21,21 @@ var ReviewSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    hasGloryhole: {
+        type: Boolean,
+        default: false
+    },
     styleRate: {
         type: Number,
         min: 0,
-        max:5,
-        default: 0    
+        max: 5,
+        default: 5
     },
     cleanRate:{
         type: Number,
         min: 0,
         max:5,
-        default: 0
+        default: 5
     },
     restId: {
         type: String
@@ -38,7 +45,7 @@ var ReviewSchema = new mongoose.Schema({
             type: String
         },
         userId: {
-            type: String
+            type: mongoose.Schema.Types.ObjectId
         }
     },
     created: {
@@ -47,10 +54,12 @@ var ReviewSchema = new mongoose.Schema({
     },
     reviewScore: {
         upVotes: {
-            type: Number
+            type: Number,
+            default: 0
         },
         downVotes: {
-            type: Number
+            type: Number,
+            default: 0
         }
     }
 });

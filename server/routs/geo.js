@@ -12,6 +12,14 @@ module.exports = function(app){
         const { 
             input
         } = query;
+        // const {
+        //     isAccessable,
+        //     hasGloryhole,
+        //     hasChangingStation,
+        //     hasTampons,
+        //     hasMirror,
+        //     minRate
+        // }
 
         // 
         let queryString = 'https://maps.googleapis.com/maps/api/geocode/json?key=' + key.GOOGLE;

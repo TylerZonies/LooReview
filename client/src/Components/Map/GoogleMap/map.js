@@ -188,6 +188,7 @@ export class MapContainer extends Component {
                 "id": "ebc667ccbf5c24787e4f18f58dba3551b79990c0"
             }]
         }
+
     }
 
     onMarkerClick() {
@@ -222,7 +223,7 @@ export class MapContainer extends Component {
 
         return (
             <Map google={this.props.google}
-            style={{width: '100%', height: '100%', position: 'relative'}}
+            style={{width: '75%', height: '100%', position: 'relative'}}
             className={'map'}
             initialCenter={{
                 "lat": 39.9651949,
