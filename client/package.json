@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "dotenv": "^6.0.0",
+    "fs": "0.0.1-security",
     "google-maps-react": "^2.0.2",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",

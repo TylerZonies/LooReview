@@ -56,14 +56,6 @@ class App extends Component {
   }
 }
 
-const result = dotenv.config();
-console.log(result.parsed);
-
-
-if (result.error){
-  throw result.error;
-}
 
 
 export default App;
-
