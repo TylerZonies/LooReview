@@ -36,6 +36,9 @@ var UserSchema = new mongoose.Schema({
     isModerator: {
         type: Boolean,
         default: false
+    },
+    reviewScore: {
+        type: Number
     }
 });
 

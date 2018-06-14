@@ -191,8 +191,8 @@ module.exports = app => {
                     // send the sessions id to be saved as a token on local storage for verification
                     token: log._id,
                     // send information on this users permissions
-                    isAdmin: user.isAdmin,
-                    isModerator: user.isModerator
+                    // isAdmin: user.isAdmin,
+                    // isModerator: user.isModerator
                 });
             })
         })

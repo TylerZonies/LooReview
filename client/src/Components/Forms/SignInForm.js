@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {Row, Col, Input, Button} from 'react-materialize';
+import {Row, Col, Input, Button, Toast} from 'react-materialize';
+import 'whatwg-fetch';
+import { setInStorage} from '../../utils/storage';
 // import PropTypes from 'prop-types';
 
 
@@ -8,9 +10,11 @@ class SignInForm extends Component {
     constructor(){
         super();
         this.state = {
-            isLoading: true,
             signInEmail: '',
             signInPassword: '',
+            signInError: false,
+            errorMessage: '',
+            token: ''
         };
 
         this.onTextBoxCHangeSignInEmail = this.onTextBoxCHangeSignInEmail.bind(this);
@@ -24,7 +28,26 @@ class SignInForm extends Component {
         const {signInEmail, signInPassword, } = this.state;
         
         console.log(signInEmail, signInPassword, );
+
+        
         // Post request to backend
+        fetch('/account/signin', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({email: signInEmail, password: signInPassword})
+        }).then(res => {
+            if(res.success){
+                setInStorage('user_session', { token: res.token });
+                this.setState({
+                    signInError: res.success,
+                    errorMessage: res.message,
+                    token: res.token
+                })
+            }
+        })
       }
 
     onTextBoxCHangeSignInEmail(event) {
@@ -43,9 +66,13 @@ class SignInForm extends Component {
         const {
             signInEmail,
             signInPassword,
+            signInError,
+            errorMessage
           } = this.state;
 
         return(
+
+            
             <div className="login-form" >
                 <br/>
                 <br/>
@@ -57,6 +84,13 @@ class SignInForm extends Component {
                         <Input type="password" ref="password" label="Password" value={signInPassword} onChange={this.onTextBoxChangeSignInPassword} s={12} />
                         <Button type="submit" waves="purple" onClick={this.onSignIn} >Sign In</Button>
                     </Col>
+                {
+                (signInError) ? (
+                   <Toast toast={errorMessage}>
+                   Toast
+                   </ Toast>
+                ) : (null)
+                }   
                 </Row>
             </div>
         );

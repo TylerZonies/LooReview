@@ -37,7 +37,7 @@ body{
 }
 
 footer{
-  position: absolute;
+  position: fixed;
   height:8%;
   left: 0;
   bottom: 0;
@@ -60,3 +60,4 @@ footer{
   width: 90%;
   margin-right: 20px;
 }
+

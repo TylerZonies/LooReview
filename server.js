@@ -1,4 +1,4 @@
-var dotenv = require('dotenv')
+var dotenv = require('dotenv');
 dotenv()._loadEnv()
 
 var path = require('path');

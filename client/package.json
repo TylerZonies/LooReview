@@ -3,14 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "dot-env": "0.0.1",
+    "dotenv": "^6.0.0",
     "google-maps-react": "^2.0.2",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-materialize": "^2.2.1",
     "react-scripts": "1.1.4",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "whatwg-fetch": "^2.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

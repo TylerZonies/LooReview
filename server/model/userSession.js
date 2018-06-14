@@ -13,14 +13,14 @@ var UserSessionSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    isAdmin: {
-        type: Boolean,
-        default: false,
-    },
-    isModerator: {
-        type: Boolean,
-        default: false
-    }
+    // isAdmin: {
+    //     type: Boolean,
+    //     default: false,
+    // },
+    // isModerator: {
+    //     type: Boolean,
+    //     default: false
+    // }
 });
 
 module.exports = mongoose.model('UserSession', UserSessionSchema);

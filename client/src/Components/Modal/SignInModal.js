@@ -10,7 +10,8 @@ class SignInModal extends Component {
         return(
 
             <div className='modalLoo'>
-                <Modal
+                <Modal 
+                    id='signIn'
                     trigger={<NavItem>Login</NavItem>}>
                     <SignInForm />
                 </Modal>
