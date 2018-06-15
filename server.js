@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var db = require('./config/connection.js')
 
 
-mongoose.connect(db.db_dev).catch((reason) => {
+mongoose.connect(db.db).catch((reason) => {
     console.log('could not connect to database for ' + reason);
 }).then((connection) => {
     console.log(connection.connectionOptions);
