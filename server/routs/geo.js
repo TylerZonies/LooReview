@@ -42,7 +42,7 @@ module.exports = function(app){
                 }
 
 
-                console.log(location);
+                
 
                 let queryLocation = "";
 

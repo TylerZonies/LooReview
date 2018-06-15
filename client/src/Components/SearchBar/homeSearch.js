@@ -44,37 +44,14 @@ class HomeSearch extends Component {
         }else{
             searchTerms += addressString.trim();
         }
-        // if(isAccessable){
-        //     searchTerms += "&isAccessable=true";
-        // }
-        // if(hasChangingStation){
-        //     searchTerms += "&hasChangingStation=true";
-        // }
-        // if(hasTowel){
-        //     searchTerms += "&hasTowel=true";
-        // }
-        // if(hasMirror){
-        //     searchTerms += "&hasMirror=true";
-        // }
-        // if(hasTampons){
-        //     searchTerms += "&hasTampons=true";
-        // }
-        // if(minRate > 0){
-        //     searchTerms += "&minRate=" + minRate;
-        // }
+        
         
         console.log(searchTerms);
         // Get request to backend
         fetch('/search/location?input=' + searchTerms, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            searchTerms: searchTerms,
-          }),
+          method: 'GET'
         }).then(res => {
-            console.log('Response: ', res);
+            this.props.passInfo(res);
           });
     }
 

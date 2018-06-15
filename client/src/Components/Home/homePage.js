@@ -10,18 +10,34 @@ class HomePage extends Component {
     constructor(props){
         super(props);
         this.state = {
-           
+           searchResponse: {},
+           isSearched: false
 
         }
+
+        this.passInfo = this.passInfo.bind();
     }
+
+    passInfo(res){
+        console.log(res);
+        this.setState({
+            searchResponse: res,
+            isSearched: true
+        });
+    }
+
 
     render(){
       
         return(
             <Row>
-                {/* {MapItems} */}
+                {
+                    (isSearched) ? (
+                         <MapPage response={this.state.searchResponse}/>
+                    ) : ( <HomeSearch passInfo={passInfo.bind(this)}/>)
+                }
                 {/* <MapPage/> */}
-                {/* <HomeSearch /> */}
+                <HomeSearch />
 
             </Row>
         )

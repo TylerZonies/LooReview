@@ -29,10 +29,7 @@ class App extends Component {
     const session = getFromStorage('user_session')
     if(session && session.token){
       fetch('/account/verify?token=' + session.token, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        method: 'GET'
       }).then(res => {
           if(res.success){
             this.setState({
@@ -50,8 +47,10 @@ class App extends Component {
     return (
       <div className="page clearfix">
         <Navibar loggedIn={this.isLoggedIn}/>
+
             <MapPage />
           {/* <HomePage /> */}
+
       </div>
     );
   }
