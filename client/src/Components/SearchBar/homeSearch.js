@@ -51,7 +51,7 @@ class HomeSearch extends Component {
         fetch('/search/location?input=' + searchTerms, {
           method: 'GET'
         }).then(res => {
-            this.props.giveInfo(res);
+            this.props.passInfo(res);
           });
     }
 

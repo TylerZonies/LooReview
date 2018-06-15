@@ -45,8 +45,8 @@ class App extends Component {
     return (
       <div className="page clearfix">
         <Navibar loggedIn={this.isLoggedIn}/>
-        <MapPage/>
-          {/* <HomePage /> */}
+        {/* <MapPage/> */}
+          <HomePage />
         {/* <Footer /> */}
       </div>
     );
