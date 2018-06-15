@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {Row, Col, Preloader, Card} from 'react-materialize';
 // import logo from './logo.svg';
 import Navibar from '../Header/navbar';
-
-// import HomePage from './Components/Home/homePage'
 import MapG from './GoogleMap/map';
 import CollapsibleSearchBar from '../Collapsible/SearchBar';
 
@@ -221,7 +219,6 @@ class MapPage extends Component {
       </div>
     );
   }
-
 }
 
 export default MapPage;

@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import React, { Component } from 'react';
 import 'react-materialize';
 // import logo from './logo.svg';
@@ -13,6 +14,7 @@ import MapPage from './Components/Map/mapPage';
 class App extends Component {
   
   constructor(){
+
     super();
     this.state = {
       verifyLoading: false,
@@ -48,13 +50,13 @@ class App extends Component {
     return (
       <div className="page clearfix">
         <Navibar loggedIn={this.isLoggedIn}/>
-        <MapPage/>
+            <MapPage />
           {/* <HomePage /> */}
-        {/* <Footer /> */}
       </div>
     );
   }
 }
 
-export default App;
 
+
+export default App;
