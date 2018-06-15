@@ -25,26 +25,24 @@ class SignInForm extends Component {
 
     onSignIn() {
         // Grab state
-        const {signInEmail, signInPassword, } = this.state;
+        const { signInEmail, signInPassword, } = this.state;
         
-        console.log(signInEmail, signInPassword, );
+        // console.log(signInEmail, signInPassword, );
 
         
         // Post request to backend
-        fetch('/account/signin', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({email: signInEmail, password: signInPassword})
-        }).then(res => {
+        fetch('/account/signin', {method: 'GET'}).then(res => {
             if(res.success){
                 setInStorage('user_session', { token: res.token });
                 this.setState({
                     signInError: res.success,
                     errorMessage: res.message,
                     token: res.token
+                })
+            } else {
+                this.setState({
+                    signInError: res.success,
+                    errorMessage: res.message
                 })
             }
         })

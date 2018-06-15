@@ -22,13 +22,7 @@ class CollapsibleSearchBar extends Component {
         console.log(searchTerms);
         // Get request to backend
         fetch('/search/location?input=' + searchTerms, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            searchTerms: searchTerms,
-          }),
+          method: 'GET'
         }).then(res => {
             console.log('Response: ', res);
           });
